@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     gender: { type: String, required: true, enum: ["male", "female"] },
     profilePic: { type: String, default: "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" }
 
-})
+} , {timestamps: true})
 
 const User = mongoose.model("User" , userSchema);
 
