@@ -1,12 +1,12 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Login = () => {
     return (
         <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
             <div className='h-full w-full bg-gray-100 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-5 '>
             <h1 className='text-3xl font-semibold text-center text-gray-500 pb-6'>
                     Login
-                    <span className='text-blue-500'> Chatmate</span>
+                    <span className='text-green-600'> Chatmate</span>
                 </h1>
 
                 <form>
@@ -24,9 +24,9 @@ const Login = () => {
                             <input type="password" className="grow"  />
                         </label>
                     </div>
-                    <a href="#" className='text-sm hover:underline hover:text-blue-700 inline-block mt-2 pl-4'>
+                    <Link to="/signup" className='text-sm hover:underline hover:text-green-700 inline-block mt-2 pl-4'>
                         {"Don't"} have an account?
-                    </a>
+                    </Link>
 
                     <div className='p-2'>
                         <button className='btn btn-block btm-sm mt-2 text-xl'>Login</button>
