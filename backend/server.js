@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 const router = require("./routes/auth.route")
 const messageRoutes  = require("./routes/message.route")
 const userRoutes  = require("./routes/user.route")
+const cors = require("cors");
 
 
 const connectMongodb = require("./config/db");
@@ -14,6 +15,7 @@ const port = process.env.PORT;
 
 dotenv.config()
 
+app.use(cors())
 app.use(express.json());
 app.use(cookieParser());
 

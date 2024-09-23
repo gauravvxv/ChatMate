@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import useSignup from '../../hooks/useSignup'
+import toast from 'react-hot-toast'
 
 const Signup = () => {
     const [inputs, setInputs] = useState({
@@ -10,9 +12,11 @@ const Signup = () => {
         gender: "",
     })
 
-    const handleForm = (e) => {
+    const {loading , signup} = useSignup();
+
+    const handleForm = async(e) => {
         e.preventDefault();
-        console.log(inputs)
+      await signup(inputs);
     }
     return (
         <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
@@ -74,7 +78,12 @@ const Signup = () => {
                     </Link>
 
                     <div className='p-2'>
-                        <button className='btn btn-block btm-sm mt-2 text-xl'>Signup</button>
+                        <button className='btn btn-block btm-sm mt-2 text-xl' disabled={loading}>
+
+                            {loading ? <span className='loadind loading-spinner'></span> : "Signup" }
+                        
+                            
+                            </button>
                     </div>
                 </form>
             </div>
