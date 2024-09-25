@@ -1,8 +1,8 @@
 const express = require("express");
-const router =  express.Router();
-const protectRoute = require("../middleware/protectRouter");
-const getUSersForSidebar = require("../controllers/user.controller")
+const router = express.Router();
+const protectRouter = require("../middleware/protectRouter");
+const getUsersForSidebar = require("../controllers/user.controller")
 
-router.get("/",protectRoute, getUSersForSidebar)
+router.get("/", protectRouter, getUsersForSidebar)
 
-module.exports  = router
+module.exports = router;

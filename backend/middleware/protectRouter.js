@@ -3,13 +3,15 @@ const dotenv  = require("dotenv");
 const User = require("../models/user.model");
 
 dotenv.config();
-
-const protectRoute = async (req,res,next) => {
+                                                
+const protectRouter = async (req,res,next) => {
     try {
         const token = req.cookies.jwt;
+        console.log(token);
+        
 
         if(!token){
-            return res.status(401).json({error: "Unauthorised - No Token provided"});
+            return res.status(401).json({error: "Unauthorized - No Token provided"});
         }
 
         const decoded = jwt.verify(token , process.env.SECRET)
@@ -21,7 +23,7 @@ const protectRoute = async (req,res,next) => {
         const user = await User.findById(decoded.userId).select("-password");
 
         if(!user){
-            res.status(404).json({error: "User not found"});
+          return  res.status(404).json({error: "User not found"});
         }
 
         req.user = user;
@@ -34,4 +36,4 @@ const protectRoute = async (req,res,next) => {
     }
 }
 
-module.exports = protectRoute;
+module.exports = protectRouter;

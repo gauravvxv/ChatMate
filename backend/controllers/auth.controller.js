@@ -37,12 +37,12 @@ const signup = async (req, res) => {
 
         if (newUser) {
 
-            generateTokenAndSetCookie(newUser._id, res);
             await newUser.save();
+            generateTokenAndSetCookie(newUser._id, res);
 
             res.status(201).json({
                 _id: newUser._id,
-                fullname: newUser.fullName,
+                fullName: newUser.fullName,
                 username: newUser.username,
                 profilePic: newUser.profilePic
             })
@@ -75,11 +75,10 @@ const login = async (req, res) => {
         generateTokenAndSetCookie(user._id, res)
 
         res.status(200).json({
-            message: "Login Successful",
-            user: {
-                _id: user._id,
-                username: user.username
-            }
+          _id: user._id,
+          fullName: user.fullName,
+          username: username,
+          profilePic : user.profilePic
         })
 
     }

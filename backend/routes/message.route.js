@@ -1,9 +1,9 @@
 const express = require("express");
 const {sendMessage , getMessage} = require("../controllers/message.controller")
-const protectRoute = require("../middleware/protectRouter")
+const protectRouter = require("../middleware/protectRouter")
 const router = express.Router();
 
-router.get("/:id", protectRoute , getMessage)
-router.post("/send/:id", protectRoute , sendMessage)
+router.get("/:id", protectRouter , getMessage)
+router.post("/send/:id", protectRouter , sendMessage)
 
 module.exports = router

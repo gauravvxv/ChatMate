@@ -15,7 +15,10 @@ const port = process.env.PORT;
 
 dotenv.config()
 
-app.use(cors())
+app.use(cors({
+origin: 'http://localhost:3000',
+credentials: true,
+}))
 app.use(express.json());
 app.use(cookieParser());
 

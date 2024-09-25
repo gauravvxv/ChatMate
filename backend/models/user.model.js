@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true, minLength: 6 },
     gender: { type: String, required: true, enum: ["male", "female"] },
-    profilePic: { type: String, default: "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" }
+    profilePic: { type: String, default: "" }
 
 } , {timestamps: true})
 
