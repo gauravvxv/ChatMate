@@ -1,5 +1,7 @@
 const Conversation = require("../models/conversation.model")
-const Message = require("../models/message.model")
+const Message = require("../models/message.model");
+const { getReceiverSocketId } = require("../socket/socket");
+const {io} = require('../socket/socket')
 
 const sendMessage = async (req, res) => {
 
@@ -33,6 +35,12 @@ const sendMessage = async (req, res) => {
 
     await Promise.all([conversation.save() , newMessage.save()])
 
+    const receiverSocketId = getReceiverSocketId(receiverId)
+
+    if(receiverSocketId) {
+        io.to(receiverSocketId).emit("newMessage" , newMessage)
+    }
+
         res.status(201).json(newMessage);
     } catch (error) {
         console.log("error in message controller", error.message);
@@ -56,9 +64,7 @@ try {
     }
 
     const messages = conversation.messages;
-    console.log(messages);
     
-
     res.status(200).json(messages)
 
 } catch (error) {

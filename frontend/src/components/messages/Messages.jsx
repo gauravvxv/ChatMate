@@ -2,9 +2,11 @@ import React, { useEffect  , useRef} from 'react'
 import Message from './Message'
 import useGetMessages from '../../hooks/useGetMessages'
 import MessageLoading from '../loadingChat/MessageLoading';
+import useListenMessage from '../../hooks/useListenMessage';
 
 const Messages = () => {
   const { messages, loading } = useGetMessages();
+  useListenMessage();
   const lastMessage = useRef(null);
 
   useEffect(() => {

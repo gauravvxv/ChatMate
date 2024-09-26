@@ -12,6 +12,7 @@ const chatClassName = fromMe ? 'chat-end' : 'chat-start';
 const profilePic = fromMe ? authUser.profilePic: selectedConversation?.profilePic;
 const bgColor = fromMe ?  'bg-green-700' : "";
 const formattedTime = extractTime(message.createdAt)
+const shouldShake = message.shouldShake ? 'shake' : '';
 
   return (
     <div className={`chat ${chatClassName}`}>
@@ -21,7 +22,7 @@ const formattedTime = extractTime(message.createdAt)
             </div>
         </div>
 
-        <div className={`chat-bubble text-white ${bgColor}`}>{message.message}</div>
+        <div className={`chat-bubble text-white ${bgColor} ${shouldShake}`}>{message.message}</div>
         <div className={`chat-footer opacity-50 text-xs flex gap-1 items-center`}>{formattedTime}</div>
       
     </div>
