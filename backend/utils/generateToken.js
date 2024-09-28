@@ -9,7 +9,7 @@ dotenv.config();
 
     res.cookie("jwt", token, {
         httpOnly: true,
-        secure: process.env.NODE_env === 'production', 
+        secure: process.env.NODE_env === 'development', 
         sameSite: 'None', 
         maxAge: 7 * 24 * 60 * 60 * 1000,  
     })
