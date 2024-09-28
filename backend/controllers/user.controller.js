@@ -11,7 +11,7 @@ const getUsersForSidebar = async(req,res)=> {
         
     } catch (error) {
         console.log("error in user controller" , error.message)
-        res.status(500).json({ error: "Inte rnal server error" }) 
+        res.status(500).json({ error: "Internal server error" }) 
     }
 }
 
