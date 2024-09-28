@@ -16,7 +16,7 @@ const port = process.env.PORT;
 dotenv.config()
 
 app.use(cors({
-origin: 'https://chat-mate-umber.vercel.app',
+origin: 'http://localhost:3000',
 credentials: true,
 }))
 app.use(express.json());

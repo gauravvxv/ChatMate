@@ -9,11 +9,6 @@ const Conversation = ({ conversation, emojis, lastInd }) => {
 
     const { onlineUsers } = useSocketContext();
     const isOnline = onlineUsers.includes(conversation._id);
-    console.log(isOnline)
-
-    console.log("conversation._id:", conversation._id);
-    console.log("onlineUsers:", onlineUsers);
-
 
     return (
         <>
