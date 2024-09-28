@@ -3,6 +3,6 @@ const router = express.Router();
 const protectRouter = require("../middleware/protectRouter");
 const getUsersForSidebar = require("../controllers/user.controller")
 
-router.get("/", protectRouter, getUsersForSidebar)
+router.get("/", getUsersForSidebar)
 
 module.exports = router;
