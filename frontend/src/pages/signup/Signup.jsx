@@ -81,7 +81,6 @@ const Signup = () => {
 
                             {loading ? <span className='loadind loading-spinner'></span> : "Signup" }
                         
-                            
                             </button>
                     </div>
                 </form>
