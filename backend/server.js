@@ -16,7 +16,7 @@ const port = process.env.PORT;
 dotenv.config()
 
 app.use(cors({
-origin: 'http://localhost:3000',
+origin: 'https://chatmate-dusky.vercel.app',
 credentials: true,
 }))
 app.use(express.json());
