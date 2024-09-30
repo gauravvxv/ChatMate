@@ -16,22 +16,19 @@ const Messages = () => {
   }, [messages])
 
   return (
-    <div className='px-4 flex-1 overflow-auto'>
-
-      {!loading && messages.length > 0 && messages.map((mess) => (
+    <div className='px-4 flex-1 overflow-auto h-full md:h-[calc(100vh-200px)]'> 
+    {!loading && messages.length > 0 && messages.map((mess) => (
         <div key={mess._id} ref={lastMessage}>
-          <Message message={mess} />
+            <Message message={mess} />
         </div>
-      ))}
+    ))}
 
-      {loading && [...Array(3)].map((_, idx) => <MessageLoading key={idx} />)}
+    {loading && [...Array(3)].map((_, idx) => <MessageLoading key={idx} />)}
 
-      {!loading && messages.length === 0 && (
+    {!loading && messages.length === 0 && (
         <p className='text-center'>Send a message to start a conversation</p>
-      )}
-
-
-    </div>
+    )}
+</div>
   )
 }
 
