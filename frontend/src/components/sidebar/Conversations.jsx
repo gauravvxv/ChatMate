@@ -8,19 +8,22 @@ const Conversations = () => {
 
   console.log("CONVERSATION:", conversations)
   return (
-    <div className='py-2 flex flex-col overflow-auto'>
-      {conversations.map((e, i) => (
+    <div className='py-2 flex flex-col overflow-auto max-h-[calc(100vh-100px)]'>
+    {conversations.map((e, i) => (
         <Conversation
-          key={e._id}
-          conversation={e}
-          emojis={getEmojis()}
-          lastInd={i === conversations.length - 1}
+            key={e._id}
+            conversation={e}
+            emojis={getEmojis()}
+            lastInd={i === conversations.length - 1}
         />
+    ))}
 
-      ))}
-
-      {loading ? <span className='loading loading-spinner'></span> : null}
-    </div>
+    {loading && (
+        <div className='flex justify-center items-center py-4'>
+            <span className='loading loading-spinner'></span>
+        </div>
+    )}
+</div>
   )
 }
 
