@@ -14,19 +14,19 @@ const Conversation = ({ conversation, emojis, lastInd }) => {
         <>
         <div
             className={`flex gap-2 items-center hover:bg-green-600 rounded p-2 cursor-pointer transition duration-200
-                ${isSelected ? 'bg-green-600' : ''}`}
+                 ${isSelected ? 'bg-green-600' : ''}`} 
             onClick={() => setSelectedConversation(conversation)}
         >
             <div className={`avatar ${isOnline ? "online" : ""}`}>
-                <div className='w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full overflow-hidden'>
+                <div className='w-6 h-6 sm:w-10 sm:h-10 md:w-10 md:h-10 lg:w-10 lg:h-10 rounded-full overflow-hidden'>
                     <img src={conversation.profilePic} alt="user avatar" className="object-cover w-full h-full" />
                 </div>
             </div>
     
             <div className='flex flex-col flex-1'>
-                <div className='flex gap-3 justify-between items-center'>
-                    <p className='font-bold text-gray-200 text-sm sm:text-base md:text-lg'>{conversation.fullName}</p>
-                    <span className='text-lg sm:text-xl md:text-2xl'>{emojis}</span>
+                <div className='flex gap-4 justify-between items-center'>
+                    <p className='font-bold text-gray-200 text-xs sm:text-sm md:text-sm lg:text-sm'>{conversation.username}</p>
+                    <span className='text-sm sm:text-lg md:text-xl lg:text-2xl'>{emojis}</span>
                 </div>
             </div>
         </div>
