@@ -5,13 +5,11 @@ const Home = () => {
   return (
     <div className='flex sm:h-[450px] md:h-[550px] h-screen rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
 
-  <div className='overflow-y-auto'>
     <Sidebar />
-  </div>
+  
 
-  <div className=' overflow-y-auto'>
     <MessageContainer />
-  </div>
+ 
 
 </div>
   )
