@@ -8,7 +8,7 @@ const Conversations = () => {
 
   console.log("CONVERSATION:", conversations)
   return (
-    <div className='py-2 flex flex-col overflow-auto max-h-[calc(100vh-100px)]'>
+    <div className='py-2 flex flex-col overflow-y-auto max-h-[calc(100vh-100px)]'>
     {conversations.map((e, i) => (
         <Conversation
             key={e._id}
