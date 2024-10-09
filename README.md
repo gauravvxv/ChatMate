@@ -29,10 +29,15 @@ ChatMate is a real-time chat application that allows users to connect and commun
  ![Screenshot 2024-10-07 160842](https://github.com/user-attachments/assets/b345253f-9cbb-479c-90a5-d6072effea41)
 
 
-
-
 ## Tech Stack
 
-- **Frontend**: HTML, CSS, Tailwind-CSS, Daisy-UI, React, React-Hot-Toast , React-Icons.
+- **Frontend**: HTML, CSS, Tailwind-CSS, Daisy-UI, React, React-Hot-Toast, React-Icons.
 - **Backend**: Node.js, Express.js, MongoDB
 - **WebSocket**: Socket.io for real-time communication
+
+  ## API Endpoints
+
+- **POST** `/api/auth/signup` - Register a new user
+- **POST** `/api/auth/login` - Login user
+- **GET** `/api/messages/:Id` - Retrieve messages from a conversation
+- **POST** `/api/messages/send/:Id` - Send a new message
